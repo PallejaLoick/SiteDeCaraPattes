@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New HygieneEtSoin{% endblock %}
+
+{% block body %}
+
+<div style="padding-top:150px;"></div>
+    <h1>Create new Hygiene Et Soin</h1>
+
+    {{ include('hygiene_et_soin/_form.html.twig') }}
+
+    <a href="{{ path('hygiene_et_soin_index') }}">back to list</a>
+{% endblock %}

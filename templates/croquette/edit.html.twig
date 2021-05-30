@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Croquette{% endblock %}
+
+{% block body %}
+
+<div style="padding-top:150px;"></div>
+    <h1>Edit Croquette</h1>
+
+    {{ include('croquette/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('croquette_index') }}">back to list</a>
+
+    {{ include('croquette/_delete_form.html.twig') }}
+{% endblock %}

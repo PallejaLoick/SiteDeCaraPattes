@@ -1,0 +1,548 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}De Cara-Pattes{% endblock %}
+
+{% block body %}
+<style>
+  .PourquoiMoi{
+    width:100%;
+    height:auto;
+    padding-bottom:50px;
+    background:#9b59b6;
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0px;
+    margin-bottom:20px;
+    border-bottom: 3px solid white;
+    
+    z-index:2;
+  }
+
+   body{
+        font:caption;
+    }
+    text{
+        font-size:20px;
+        font-weight: normal;
+    }
+ 
+  .TxtLogo{  
+    width:24%;
+    padding-left:10%;
+    display:inline-block;
+  }
+ .Prestations{
+     width:100%;
+    height:auto;
+    background:white;
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+    margin-bottom:100px;
+    z-index:2;
+ }
+ .CercleLien{
+    text-decoration: none;
+    display:inline-block;
+    width:24%;
+    padding-left:3%;
+    text-align:center;
+ }
+
+ .PicCercle{
+    width:180px;  
+    height:180px; 
+    margin-top:20px; 
+    border-radius:200px; 
+    border: 5px solid #9b59b6;
+    display:inline-block;
+     
+ }
+
+ .PicCercle:hover{
+    border: 5px solid #f1c40f;
+    transform: scale(1.10);
+    transition: .2s ease-in-out;
+ }
+    .ButtonService{
+        border-radius: 20px; 
+        padding:15px;  
+        background-color: #9b59b6;
+        color:white;
+        text-decoration: none;  
+        margin-left:105px; 
+
+    }
+    .ButtonService:hover{
+        border: 5px solid #f1c40f;
+        background-color: #9b59b6;
+        transition-duration: 0.5s;
+        color: white; 
+    }
+    .TitrePresta{
+        margin-top:50px;
+        text-align:center;
+    }
+
+
+ /* partie vague
+
+    svg {
+    display: inline-block; 
+    margin-bottom:-1400px;
+    position: ; 
+    top: 0; 
+    left: 0; 
+    z-index: 2; 
+    } 
+    .vague { 
+    display: inline-block; 
+    position: ; 
+    margin-top:50;
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    
+    z-index: 2; 
+    } 
+    
+Fin vague */
+
+    .Moi{
+        width:90%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:150px;
+        margin-bottom:75px;
+        z-index:3;
+    }
+
+    .PicGauche{
+        float:right;
+        width:45%;
+        height:auto;
+        
+        margin-left:5%
+    }
+    .TxtDroite{
+        float:left;
+        width:50%;
+        height:auto;
+    }
+    .VagueBas{
+        width:100%;
+        height:150px;
+        margin-top:55px;
+        z-index:3;
+    }
+    .VagueHaut{
+        margin-bottom:-200px;
+    }
+    .VagueBasResponsive{
+       display:none;
+    }
+    .PrestationsResponsive{
+        display:none;
+    }
+    .CercleLienResponsive{
+        text-decoration: none;
+        display:inline-block;
+        width:50%;
+        margin-left:25%;
+        margin-right:25%;
+        text-align:center;
+    }
+    .VagueHautRsp{
+        display:none;
+    }
+    .VagueBasRsp{
+        display:none;
+    }
+     @media (max-width: 900px){
+        .VagueBas{
+            display:none;
+        }
+        .VagueBasResponsive{
+            display:block;
+            position:absolute;
+            width:100%;
+            height:150px;
+            z-index:3;
+        }
+        .Prestations{
+            display:none;
+        }
+        .PrestationsResponsive{
+            display:block;
+            width:100%;
+            height:auto;
+            background:white;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:100px;
+            z-index:2;
+        }
+    }
+    .ButtonPresentationRsp{
+        border-radius: 20px; 
+        padding-top:20px;
+        padding-bottom:20px;
+        padding-left:100px;
+        padding-right:100px;
+        margin-left:auto;
+        margin-right:auto;
+        background-color: #9b59b6;
+        color:white;
+        text-decoration: none;
+    }
+    .ButtonPresentationRsp:hover{
+        border: 3px solid #f1c40f;
+        background-color: #9b59b6;
+        transition-duration: 0.3s;
+        color: #f1c40f;
+    }
+    .ButtonPresentation{
+            border-radius: 20px; 
+            padding-top:20px;
+            padding-bottom:20px;
+            padding-left:100px;
+            padding-right:100px;
+            float:right;
+            background-color: #9b59b6;
+            color:white;
+            text-decoration: none;
+            
+        }
+        .ButtonPresentation:hover{
+            border: 3px solid #f1c40f;
+            background-color: #9b59b6;
+            transition-duration: 0.3s;
+            color: #f1c40f;
+            
+            
+        }
+        .Vague{
+            z-index:3; 
+            position:; 
+            width:100%; 
+            height:auto; 
+            margin-top:-230px;
+        }
+        
+        .ImgBandeau{
+            width:100%;  
+            height:auto;
+            margin-top:80px;
+        }
+        .Titre{
+            width:100%;
+            height:100%;
+            color: #9b59b6;
+            margin-top:-10%;
+            text-decoration: underline #f1c40f;
+            font-size:40px;
+            z-index:2;
+            margin-left:auto;
+            margin-right:auto;
+            text-align:center;
+        }
+        .MoiResponsive{
+            display:none;
+        }
+        .PourquoiMoiRsp{
+            display:none;
+        }
+       @media(max-width:1070px){
+            .Vague{
+                display:none;
+            }
+            .VagueHautRsp{
+            display:block;
+            margin-bottom:-20px;
+            }
+            .VagueBasRsp{
+            display:block;
+            margin-top:-20px;
+            }
+            .ImgBandeau{
+                margin-top:120px;
+            }
+            .Titre{
+                margin-top:5%;
+                margin-bottom:-30%;
+            }
+            .MoiResponsive{
+                display:block;
+                width:100%;
+                height:auto;
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:220px;
+                margin-bottom:75px;
+                z-index:3;
+                padding-left:4%;
+                padding-right:2.5%;
+                text-align:center;
+    
+            }
+            .Moi{
+                display:none;
+            }
+            .PourquoiMoi{
+                display:none;
+            }
+            .PourquoiMoiRsp{
+                display:block;
+                width:100%;
+                height:auto;
+                background:#9b59b6;
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:0px;
+                margin-bottom:20px;
+                padding-bottom:25px;
+                padding-top:25px;
+                
+            }
+            .VagueBas{
+                display:none;
+            }
+            .VagueHaut{
+                display:none;
+                
+            }
+            .TxtLogoRsp{
+                width:25%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+        }
+</style>
+
+    <img class="ImgBandeau"src="{{asset('PhotoAccueil/BandeauAccueil.jpg')}}"/>
+    <div class="Vague ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,170C384,159,480,125,576,112.3C672,95,768,90,864,140C960,181,1056,171,1152,144C1248,117,1344,105,1392,120.3L1440,130L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,76,320,48,320L0,320Z"></path></svg>   
+    </div>
+    
+    <h1 class="Titre">Accueil</h1>
+    
+        
+
+  <div class="Moi">
+        <div class="PicGauche">
+            <img style="margin-left:10%; margin-right:10%; margin-top:-25px; width:55%; height:auto; border-radius:10px; z-index:1; "src="{{asset('PhotoAccueil/Pic1.jfif')}}"/>
+            <img style="margin-left:50%; margin-right:%; margin-top:-10%; width:55%; height:auto; border-radius:10px; z-index:1; "src="{{asset('PhotoAccueil/Pic2.jpg')}}"/>
+        </div>
+        <div class="TxtDroite">
+            <text style="font-size:23px;text-align:center; ">Une </text><text style="font-size:23px; text-decoration: underline #f1c40f; text-align:center;  color:#9b59b6; "> Méthode Douce</text><text style="width:100%;text-align: center; font-size:20px;">  d'éducation canine</text>
+            <div style="margin-top:25px;"></div>
+          
+            <text  style="width:100%;text-align: center; font-size:23px;"> Puisqu'il n'y a rien de plus beau que la relation entre un maître et son chien, je peux vous aider en trouvant avec vous la meilleure méthode qui conviendra le mieux à votre compagnon ! </text>
+            <div style="margin-top:35px;"></div>
+            <text  style="width:100%;text-align: center; font-size:23px;"> Connaître ses besoins, répondre à son bien-être, entretenir une relation basée sur le respect et la confiance sont les clés d'une éducation douce et bienveillante. J'interviens au cœur de cette relation pour que vous puissiez la vivre pleinement.</text>
+            <div style="margin-top:35px;"></div>
+            <text  style="width:100%;text-align: center; font-size:23px;"> Grâce à des cours personnalisés, à domicile, individuellement en ville ou en groupe, nous veillerons à dévoiler le meilleur de votre chien.</text>
+            <div style="margin-top:45px;"></div>
+            <text style="font-size:23px;text-align:center; ">Mon </text><text style="font-size:23px; text-decoration: underline #f1c40f; text-align:center;  color:#9b59b6; "> Rôle</text>
+            <text style="width:100%;text-align: center; font-size:23px;"> est de vous aider à comprendre votre chien pour respecter ses besoins et mieux communiquer avec lui. Parce que chaque chien est unique et chaque personne différente, je m'adapte à vous et à votre chien.</text>
+            </br></br>
+            <a href="http://192.168.1.20:10002/index.php/presentation/"class="ButtonPresentation">Décrouvrez-moi</a>
+        </div>
+        
+    </div>
+    <div class="MoiResponsive">
+        
+            <text style="font-size:20px; text-align:center; ">Une </text><text style="font-size:20px; text-decoration: underline #f1c40f; text-align:center; color:#9b59b6; "> Méthode Douce</text><text style="width:100%;text-align: center; font-size:20px;">  d'éducation canine</text>
+            <div style="margin-top:10px;"></div>
+          
+            <text  style="width:100%;text-align: center; font-size:20px;;">   Puisqu'il n'y a rien de plus beau que la relation entre un maître et son chien, je peux vous aider en trouvant avec vous la meilleure méthode qui conviendra le mieux à votre compagnon ! </text>
+            <div style="margin-top:10px;"></div>
+            <text  style="width:100%;text-align: center; font-size:20px;;"> Connaître ses besoins, répondre à son bien être, entretenir une relation basée sur le respect et la confiance sont les clés d'une éducation douce et bienveillante. J'interviens au cœur de cette relation pour que vous puissiez la vivre pleinement.</text>
+            <div style="margin-top:10px;"></div>
+            <text  style="width:100%;text-align: center; font-size:20px;;"> Grâce à des cours personnalisés, à domicile, individuellement en ville ou en groupe, nous veillerons à dévoiler le meilleur de votre chien.</text>
+            <div style="margin-top:15px;"></div>
+            <img style="margin-left:10%; margin-right:10%; margin-top:15px; width:55%; height:auto; border-radius:10px; z-index:1; "src="{{asset('PhotoAccueil/Pic1.jfif')}}"/>
+            <div style="margin-top:10px;"></div>
+
+            <text style="font-size:20px; text-align:center; ">Mon </text><text style="font-size:20px; text-decoration: underline #f1c40f; text-align:center;  color:#9b59b6; "> Rôle</text>
+            <text style="width:100%;text-align: center; font-size:20px;"> est de vous aider à comprendre votre chien pour respecter ses besoins et mieux communiquer avec lui. Parce que chaque chien est unique et chaque personne différente, je m'adapte à vous et à votre chien.</text>
+            </br></br>
+             <img style="margin-left:%; margin-right:%; margin-top:; width:55%; height:auto; border-radius:10px; z-index:1; "src="{{asset('PhotoAccueil/Pic2.jpg')}}"/>
+            <div style="margin-top:15px;"></div>
+            <div style="margin-top:8%; margin-bottom:8%; ">
+            <a href="http://192.168.1.20:10002/index.php/presentation/"class="ButtonPresentationRsp">Décrouvrez-moi</a>
+            </div>
+       
+        
+    </div>
+
+    <div class="Prestations">
+    
+        <div class="TitrePresta">
+
+            <text style="font-size:40px; text-align:center; ">Mes </text><text style="font-size:40px;text-align:center;  color:#9b59b6; "> préstations</text>
+            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:48%;margin-right:auto;width:10%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+
+        </div>
+
+        <div class="CercleLien">
+            <a href="http://192.168.1.20:10002/index.php/presentation/"><img class="PicCercle"src="{{asset('PhotoAccueil/IconFemme.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="font-size:20px;font-weight: bold; color:#f1c40f; ">Présentation</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:37.5%;margin-right:auto;width:25%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>
+        <div class="CercleLien">
+        <a href="http://192.168.1.20:10002/index.php/service/"> <img class="PicCercle"src="{{asset('PhotoAccueil/IconChienHomme.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="font-size:20px;font-weight: bold; color:#f1c40f; ">Services</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:37.5%;margin-right:auto;width:25%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>
+        <div class="CercleLien">
+            <a href="http://192.168.1.20:10002/index.php/contact/"><img class="PicCercle"src="{{asset('PhotoAccueil/IconCollier.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="font-size:20px;font-weight: bold; color:#f1c40f; ">Boutique en ligne</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:31.5%;margin-right:auto;width:37.5%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>
+        <div class="CercleLien">
+            <a href="http://192.168.1.20:10002/index.php/contact/"><img class="PicCercle"src="{{asset('PhotoAccueil/IconPhone1.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="font-size:20px;font-weight: bold; color:#f1c40f; ">Contact</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:37.5%;margin-right:auto;width:25%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>  
+        
+    </div>
+
+    
+    <div class="PrestationsResponsive">
+    
+        <div class="TitrePresta">
+
+            <text style="font-size:40px; text-align:center; ">Mes </text><text style="font-size:40px;text-align:center;  color:#9b59b6; "> préstations</text>
+            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:30.3%;margin-right:auto;width:42.5%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+
+        </div>
+
+        <div class="CercleLienResponsive">
+            <a href="http://192.168.1.20:10002/index.php/presentation/"><img class="PicCercle"src="{{asset('PhotoAccueil/IconFemme.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="margin-left:;font-size:20px;font-weight: bold; color:#f1c40f; ">Présentation</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:25%;margin-right:auto;width:50%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>
+        <br>
+        <div class="CercleLienResponsive">
+        <a href="http://192.168.1.20:10002/index.php/service/"> <img class="PicCercle"src="{{asset('PhotoAccueil/IconChienHomme.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="margin-left:;font-size:20px;font-weight: bold; color:#f1c40f; ">Services</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:25%;margin-right:auto;width:50%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>
+        <br>
+        <div class="CercleLienResponsive">
+            <a href="http://192.168.1.20:10002/index.php/contact/"><img class="PicCercle"src="{{asset('PhotoAccueil/IconCollier.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style="margin-left:5%;font-size:20px;font-weight: bold; color:#f1c40f; ">Boutique en ligne</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:18%;margin-right:auto;width:65%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>
+        <br>
+        <div class="CercleLienResponsive">
+            <a href="http://192.168.1.20:10002/index.php/contact/"><img class="PicCercle"src="{{asset('PhotoAccueil/IconPhone1.png')}}"/></a>
+            <br>
+            <div style="margin-bottom:15px;"></div>
+            <text style=" margin-left:;font-size:20px;font-weight: bold; color:#f1c40f;width:100%; ">Contact</text>
+            <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:25%;margin-right:auto;width:50%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+        </div>  
+        
+        
+    </div>
+
+    <div class="bandeauAvecVagueViolet">
+            <div class="VagueHaut">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" >
+                    <path fill="#9b59b6" fill-opacity="1" d="M0,74L60,63.3C120,53,240,41,360,41.3C480,41,600,43,820,80C800,75,900,107,1200,80.3C1500,50,1520,64,1480,48L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                </svg>
+            </div>
+
+            <div class="PourquoiMoi">
+                <div class="TxtLogo">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconDiplome.png')}}"/>
+                    <br><br><br><br>  <br>      
+                    <text style="font-size:20px; color:white; ">Savoir-faire</text>
+                </div>
+                <div class="TxtLogo">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconMainCoeur2.png')}}"/>
+                    <br><br><br><br>  <br>      
+                    <text style="font-size:20px; color:white; ">Passionnée</text>
+                </div>
+                <div class="TxtLogo">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconHelp2.png')}}"/>
+                    <br><br><br><br>   <br>     
+                    <text style="font-size:20px; color:white; ">À l'écoute</text>
+                </div>
+                <div class="TxtLogo">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:37px;"src="{{asset('PhotoAccueil/IconPro.png')}}"/>
+                    <br><br><br><br>      
+                    <text style="font-size:20px; color:white; ">Professionnalisme</text>
+                </div>
+                
+
+            </div>
+
+            
+
+
+            <div class="VagueHautRsp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" >
+                    <path fill="#9b59b6" fill-opacity="1" d="M-150,74L60,63.3C120,53,240,41,360,41.3C480,41,600,43,820,80C800,75,900,107,1200,80.3C1500,50,1520,64,1480,48L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                </svg>
+            </div>
+            <div class="PourquoiMoiRsp">
+                <div class="TxtLogoRsp">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconDiplome.png')}}"/>
+                    <br><br><br><br>      
+                    <text style="font-size:20px; color:white; ">Savoir-faire</text>
+                </div>
+                <br>
+                <div class="TxtLogoRsp">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconMainCoeur2.png')}}"/>
+                    <br><br><br><br>      
+                    <text style="font-size:20px; color:white; ">Passionnée</text>
+                </div>
+                <br>
+                <div class="TxtLogoRsp">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconHelp2.png')}}"/>
+                    <br><br><br><br>      
+                    <text style="font-size:20px; color:white; ">À l'écoute</text>
+                </div>
+                <br>
+                <div class="TxtLogoRsp">
+                    <img style="width:75px; margin-left:70px; height:75px; float:left; margin-top:14px; margin-left:12px;"src="{{asset('PhotoAccueil/IconPro.png')}}"/>
+                    <br><br><br><br>      
+                    <text style="font-size:20px; color:white; margin-left:-30px;">Professionnalisme</text>
+                </div>
+                
+
+            </div>
+
+            <div class="VagueBasRsp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#9b59b6" fill-opacity="1" d="M-150,64L60,53.3C120,43,240,21,360,21.3C480,21,600,43,820,65C800,63,900,80,1200,60.3C1500,40,1420,64,1480,48L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                </svg>
+            </div>
+        </div>
+
+    
+ 
+
+
+
+
+{% endblock %}
