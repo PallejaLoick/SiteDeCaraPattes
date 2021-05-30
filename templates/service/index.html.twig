@@ -1,0 +1,508 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Services{% endblock %}
+
+{% block body %}
+
+    <style> 
+    body{
+        font:caption;
+    }
+    text{
+        font-size:20px;
+        font-weight: normal;
+    }
+    a{
+        text-decoration:none;
+        color:black;
+    }
+    .ButtonService{
+        border-radius: 20px; 
+        padding:10px;
+        background-color: #9b59b6;
+        color:white;
+        text-decoration: none;   
+    }
+    .ButtonService:hover{
+        border: 2px solid #f1c40f;
+        background-color: #9b59b6;
+        transition-duration: 0.5s;
+        color: #f1c40f; 
+    }
+    .avec_photo:hover{
+        transform: scale(1.05);
+        transition: .3s ease-in-out;
+    }
+    .avec_photo{
+        margin-left:50px;
+        width: 300px;
+        height: 600px;
+        display: inline-block;
+        margin-bottom:150px; 
+        box-shadow: 4px 4px 4px 4px #95a5a6;
+    }
+    .SéparateurRsp{
+        display:none;
+    }
+    .TitreRsp{
+        display:none;
+    }
+    .Titre{
+        display:block;
+        width:100%;
+        height:100%;
+        color: #9b59b6;
+        margin-left:40%;
+        text-decoration: 4px underline #f1c40f;
+        margin-bottom:1%;
+        font-size:55px;
+        font-family: MV Boli;
+    }
+    @media (max-width: 900px){
+        .avec_photo{
+            margin-left:10%;
+        }
+        .SéparateurRsp{
+            display:block;
+        }
+        .SéparateurTitre{
+            display:none;
+        }
+        .TitreRsp{
+            display:block;
+            width:100%;
+            height:100%;
+            color: #9b59b6;
+            margin-left:13%;
+            text-decoration: 4px underline #f1c40f;
+            margin-bottom:1%;
+            font-size:55px;
+        }
+        .Titre{
+            display:none;
+        }
+            
+    }
+    .ConteneurService{
+        padding-left:10px;
+    }
+    </style>
+
+
+    <div class="bandeau_Service" style="margin-bottom:55px;">
+    
+        <img style="width:100%;  height:auto; margin-top:120px;  "src="{{asset('ChiotRHR.jpg')}}"/>
+        <text class="Titre">Les Services</text>
+        <text class="TitreRsp">Les Services</text>
+        
+            
+        <div class="SéparateurRsp" style="border-bottom:3px solid #f1c40f; margin-left:auto;margin-right:auto;width:50%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+         
+       
+     </div> 
+
+     <div style="margin-bottom:100px;"></div>
+
+    <div class="ConteneurService">
+        <!-- Bilan -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/Bilan.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">BILAN COMPORTEMENTAL</text>
+                            </br>
+                            </br>
+                            <text>Bien l'aimer c'est d'abord le comprendre.</text>
+                            </br>
+                            </br>
+                            <text>Pour comprendre la cause et proposer des solutions aux problèmes comportementaux de votre animal.</text>
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/bilan/comportemental/"class="ButtonService">En savoir plus</a>
+                            
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div> 
+
+        <!-- Cours Individuel -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/ChienCoursIndivi.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">COURS INDIVIDUELS</text>
+                            </br>
+                            </br>
+                            <text>Les cours particuliers sont idéaux pour un premier pas vers l'éducation de votre animal ou pour régler des problèmes précis.</text>
+                            
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/cours/individuelle/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div> 
+
+        <!-- Cours Collectif -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('CoursCollectif/CoursCollectifs4.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">COURS COLLECTIFS</text>
+                            </br>
+                            </br>
+                            <text>Les sessions de cours collectifs d’éducation canine vous permettront de pratiquer au sein d’un groupe en situation réelle de la vie quotidienne.</text>
+                            </br>
+                            </br>
+                            <text>Pour tous les chiens, de toutes races et de tous âges.</text>
+                            </br>
+                            </br>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/cours/collectifs/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div> 
+
+        <!-- Conseil adoption d'un chiot -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/ChienChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">CONSEIL A L'ADOPTION</text>
+                            </br>
+                            </br>
+                            <text>Adopter un chiot ou un chien n’est pas un acte anodin : il vous accompagnera pendant plusieurs années.</text>
+                            </br>
+                            </br>
+                            <text>Pour tous les chiens, de toutes races et de tous âges.</text>
+                            </br>
+                            </br>
+                            
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/conseil/adoption/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div> 
+
+        <!-- Réhabilitation chien aggresif -->
+        <div class="avec_photo">
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/ChienAgressif1.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:0px;">RÉHABILITATION CHIEN AGRESSIF</text>
+                             <div class="Séparateur" style="border-bottom: 1px solid #9b59b6; width:85%; margin-left:auto; margin-right:auto; margin-bottom:-20px; margin-top:10px;" ></div>
+                            </br>
+                            </br>
+                            <text>Les chiens présentant des comportements agressifs envers leurs congénères et envers tous types de personnes se doivent OBLIGATOIREMENT de passer par un travail individuel.</text>
+                            </br>
+                            </br>
+                            <a href="http://192.168.1.20:10002/index.php/rehabilitation/agressif/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div> 
+
+        <!-- Balade éducative -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/Balade.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">BALADE ÉDUCATIVE</text>
+                            </br>
+                            </br>
+                            <text style=" font-size:18px;"> La balade éducative, c’est l’aboutissement d’un travail individuel soigné. Pouvoir promener son chien avec des congénères et appliquer les exercices dans différents lieux et différentes situations. </text>
+                            </br>
+                            </br>
+                            <text style=" font-size:18px;">Elle permet d’entretenir sa sociabilisation et sa socialisation afin de participer à son équilibre mental et émotionnel.  </text>
+                            </br>
+                            </br>
+                            
+                            <a href="http://192.168.1.20:10002/index.php/balade/educative/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div> 
+
+        <!-- Récrée Agility -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">RÉCRÉE AGILITY</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+        <!-- Fun Jump -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">FUN JUMP</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">En savoir plus</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+       
+     
+     </div>   
+      
+  
+    <style>
+        .ChatGardienage{
+            margin-left:auto;
+            margin-right:auto;
+            width: 80%; 
+            height: 700px;
+            box-shadow: 4px 4px 4px 4px #95a5a6;
+            border-radius:10px;
+            padding:40px;
+           
+        }
+        .ChienGardienage{
+            margin-top:10%;
+            margin-left:auto;
+            margin-right:auto;
+            width: 80%; 
+            height: 700px;
+            box-shadow: 4px 4px 4px 4px #95a5a6;
+            border-radius:10px;
+            padding:40px;
+            margin-bottom:100px;
+        }
+
+        .PicChien{
+            width:20%;  
+            height:auto;  
+            border-radius:10px; 
+            float:right;
+        }
+        .PicChat{
+            width:400px; 
+            margin-left:25px;
+            height:auto; 
+            margin-top:50px; 
+            border-radius:10px; 
+            float:left;
+        }
+        .Séparateur{
+            border-bottom:1px solid #9b59b6; 
+            width:50%; 
+            margin-left:0px; 
+            margin-right:auto;
+        }
+        .SéparateurGauche{
+            border-bottom:1px solid #9b59b6; 
+            width:50%; 
+            margin-left:0px; 
+            margin-right:auto;
+            float:right;
+        }
+
+        
+        .TextGardiennageChat{
+            float:right; 
+            width:60%; 
+            height:100%; 
+            margin-top:50px;
+        } 
+        .TextGardiennageChien{
+            float:left; 
+            margin-top:100px; 
+            width:60%; 
+            height:100%;
+        }
+        .ChienGardienageResponsive{
+            display:none;
+        }
+
+        @media (max-width: 900px){
+            .ChatGardienage{
+                margin-left:9%;
+                margin-right:10%;
+                width: 80%; 
+                height: 700px;
+                box-shadow: 4px 4px 4px 4px #95a5a6;
+                border-radius:10px;
+                padding:40px;
+                margin-bottom:100px;
+            }
+            .PicChat{
+                width:100%; 
+                margin-left:auto;
+                margin-right:auto;
+                height:auto; 
+                margin-top:30px; 
+                border-radius:10px; 
+                
+            }
+            .Séparateur{
+                border-bottom:1px solid #9b59b6; 
+                width:100%; 
+                margin-left:0px; 
+                margin-right:auto;
+            }
+            .TextGardiennageChat{
+                margin-left:auto;
+                margin-right:auto;
+                width:100%; 
+                height:250px;; 
+                margin-top:50px;
+            } 
+            .ChienGardienageResponsive{
+                margin-left:9%;
+                margin-right:10%;
+                width: 80%; 
+                height: 700px;
+                box-shadow: 4px 4px 4px 4px #95a5a6;
+                border-radius:10px;
+                padding:40px;
+                margin-bottom:100px;
+                display:block;
+               
+            }
+            
+            .ChienGardienage{
+                display:none;
+            }
+        }
+    </style>
+
+  
+              
+            
+    
+   
+{% endblock %}

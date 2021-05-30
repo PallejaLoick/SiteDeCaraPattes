@@ -1,0 +1,359 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique en ligne{% endblock %}
+
+{% block body %}
+<div style="padding-top:150px;"></div>
+<style> 
+	.Contenu{
+        width:90%;
+        height:auto;
+        background:white;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        margin-bottom:50px;
+        font-size:40px;
+        font-weight:bold;
+        padding-top:50px;
+    }
+   body{
+        font:caption;
+    }
+    text{
+        font-size:20px;
+        font-weight: normal;
+    }
+    a{
+        text-decoration:none;
+        color:black;
+    }
+	.avec_photo:hover{
+        transform: scale(1.05);
+        transition: .3s ease-in-out;
+    }
+	.T1{
+        font-size:50px;
+        text-align:center;
+    }
+    .T2{
+        font-size:55px;
+        text-align:center;  
+        color:#9b59b6;
+    }
+    .avec_photo{
+        margin-left:50px;
+        width: 300px;
+        height: 600px;
+        display: inline-block;
+        margin-bottom:150px; 
+        box-shadow: 4px 4px 4px 4px #95a5a6;
+    }
+	 .ButtonService{
+        border-radius: 20px; 
+        padding:10px;
+        background-color: #9b59b6;
+        color:white;
+        text-decoration: none;   
+    }
+    .ButtonService:hover{
+        border: 2px solid #f1c40f;
+        background-color: #9b59b6;
+        transition-duration: 0.5s;
+        color: #f1c40f; 
+    }
+	 @media (max-width: 900px){
+
+        .T1{
+            font-size:30px;
+             text-align:center;
+        }
+        .T2{
+            font-size:35px;
+            text-align:center;  
+            color:#9b59b6;
+        }
+	 }
+    </style>
+
+	<div class="Contenu">
+        <text  class="T1" >Les </text><text class="T2"> produits</text>
+        
+            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:35%;margin-right:auto;width:33%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+            <div class="Espaceur"></div>
+
+		<!-- Les Colliers -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Colliers</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">Choisir vôtre collier</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+		
+		<!-- Les Laisses -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Laisses</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">Choisir vôtre laisse</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+		
+		<!-- Les Croquettes -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Croquettes</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">Choisir vôs croquettes</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+		
+		<!-- Les Accessoires -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Accessoires</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">Choisir vôtre accessoire canin</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+		
+		<!-- Les Jouets -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Jouets</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">Choisir un jouet pour vôtre chien</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+		
+		<!-- Les produits d'hygiène & Soins -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Produits d'hygiène & Soin</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">Découvrez nos solutions d'hygiène & Soin</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+		
+		<!-- Les Complément Alimentaire -->
+        <div class="avec_photo" >
+            <table>
+                <div>
+                    <tr>
+                        <th>
+                            <img style="  width:300px;  height:200px;   "src="{{asset('PhotoService/RecreChiot.jpg')}}"/>
+                        </th>
+                    </tr>
+                </div>
+                
+
+                <div>
+                    <tr style="text-align:center;">
+                        <th style="text-align:center; padding:15px;">
+                            <text style=" font-size:18px; padding-bottom:10px;border-bottom: 1px solid #9b59b6;">Les Compléments Alimentaires</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiens adultes </text>
+                            </br>
+                            </br>
+                            <text> Et</text>
+                            </br>
+                            </br>
+                            <img style="  width:25px;  height:25px;   "src="{{asset('PhotoService/IconValider.png')}}"/>
+                            <text> Chiots </text>
+                            </br>
+                            </br>
+                          
+                            <a href="http://192.168.1.20:10002/index.php/recree/chiot/"class="ButtonService">
+							
+							<text>choissisez les compléments</text>
+							<text>pour vôtres chien</text> 
+							
+							</a>
+                        </th>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+	</div>
+	
+   
+	
+{% endblock %}

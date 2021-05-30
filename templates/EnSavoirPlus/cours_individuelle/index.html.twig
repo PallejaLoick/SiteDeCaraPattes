@@ -1,0 +1,712 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours Individuels{% endblock %}
+
+{% block body %}
+    <style>
+    
+    .Contenu{
+        width:90%;
+        height:auto;
+        background:white;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        margin-bottom:50px;
+        font-size:40px;
+        font-weight:bold;
+        padding-top:50px;
+    }
+    body{
+        font:caption;
+        background:#f7d794;
+    }
+    text{
+        font-size:20px;
+        font-weight: normal;
+    }
+    .PresentationActivite{
+        width:100%;
+        height:auto;
+        margin-top:30px;
+        margin-bottom:0px;
+        padding:30px;
+    }
+    .ObjectifActivite{
+        width:100%;
+        margin-top:200px;
+        height:auto;
+        padding-bottom:50px;
+    }
+    .TarifForfait{
+        width:100%;
+        margin-top:0px;
+        height:auto;
+        padding-bottom:50px;
+    }
+    .ActiviteGauche{
+        width:30%;
+        float:left;
+        display:inline-block;
+    }
+    .ActiviteMilieu{
+        width:30%;
+        display:inline-block;
+        border-left:1px solid #9b59b6;
+        border-right:1px solid #9b59b6;
+    }
+    .ActiviteDroite{
+        width:30%;
+        float:right;
+        display:inline-block;
+    }
+    .ForfaitGauche{
+        padding-top:25px;
+        width:30%;
+        float:left;
+        display:inline-block;
+        background:#9b59b6;
+        border-radius: 15px;
+        padding-bottom:30px;
+    }
+    .ForfaitMilieu{
+        padding-top:25px;
+        width:30%;
+        display:inline-block;
+        background:#9b59b6;
+        border-radius: 15px;
+        padding-bottom:30px;
+    }
+    .ForfaitDroite{
+        padding-top:25px;
+        width:30%;
+        float:right;
+        display:inline-block;
+        background:#9b59b6;
+        border-radius: 15px;
+        padding-bottom:30px;
+    }
+    .TroisObjectifs{
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        height:auto;
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+    .TroisObjectifs2{
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        height:auto;
+        margin-top:0px;
+        margin-bottom:50px;
+    }
+ 
+    .CcspBilan{
+        margin-bottom:500px;
+        width:100%;
+        height:450px;
+        padding:50px;
+        margin-top:170px;
+        
+    }
+    @media (max-width: 1760px){
+            .PicSupperpo3{
+                display:show
+            }
+            .PicSupperpoResponsive{
+                display:none;
+            }
+        }
+    @media (min-width: 1760px){
+            .PicSupperpoResponsive{
+                display:none;
+            }
+        }
+    .Tarif{
+       margin-top:50px;
+        width:100%;
+        height:auto;
+        padding:50px; 
+        
+    }
+    .DivGauche{
+        float:left;
+        width:30%;
+        margin-left:-100px;
+        height:500px;
+        background:white;
+        box-shadow: 4px 4px 4px 4px #95a5a6; 
+        border-radius:7px;
+    }
+    .TitreTarif{
+        width:100%;
+        height:100px;
+        padding-top:25px;
+        background:#9b59b6;
+        text-align:center;
+        
+    }
+    .TitreHaut{
+        background:#9b59b6;
+        border-radius:7px;
+        width:100%;
+        height:20px;
+        margin-bottom:-10px;
+      
+    }
+    .PicDroite{
+        float:right;
+        width:40%;
+        height:450px;
+        margin-top:100px;
+        margin-right:7.5%;
+    }
+    .contenuTarif{
+        height:400px;
+        margin-top:0px;
+        padding:25px;
+    }
+    .TarifBilan{
+        margin-top:1100px;
+        width:400px; 
+        height:auto;
+        margin-left:2.5%;
+        border-radius:7px;
+        z-index:2;
+        display: flex;
+    }
+    .ButtonService{
+        border-radius: 20px; 
+        padding:15px;  
+        background-color: #9b59b6;
+        color:white;
+        text-decoration: none; 
+
+    }
+    .ButtonService:hover{
+        border: 3px solid #f1c40f;
+        background-color: #9b59b6;
+        transition-duration: 0.5s;
+        color: white; 
+    }
+    a{
+        text-decoration:none;    
+    }
+   
+    .ClassBtn{
+        width:150px;
+        margin-left:150px;
+        height:60px;
+        margin-top:50px;
+        border-radius: 15px; 
+        Background-color: #9b59b6;  
+    }
+    .ClassBtn:hover{
+        border: 3px solid #f1c40f;
+    }
+   
+    .Prix{
+        width:100%;
+        height:75px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:50px;
+        padding-left:0px;
+        
+    }
+    
+    .PresentationActiviteResponsive{
+        display:none;
+    }
+    .CcspBilanResponsive{
+            display:none;
+    }
+    .TitreRsp{
+        display:none;
+    }
+    .T1{
+        font-size:50px;
+        text-align:center;
+    }
+    .T2{
+        font-size:55px;
+        text-align:center;  
+        color:#9b59b6;
+    }
+    .Espaceur{
+        margin-bottom:70px;
+    }
+    .ObjectifActiviteResponsive{
+        display:none;
+    }
+    .TarifResponsive{
+        display:none;
+    }
+    .PrixResponsive{
+        display:none;
+    }
+
+    @media (max-width: 900px){
+
+        .PresentationActivite{
+            display:none;
+        }
+        .PresentationActiviteResponsive{
+            display:block;
+            width:100%;
+            height:auto;
+            margin-top:30px;
+            margin-bottom:0px;
+            padding:30px;
+        }
+        .CcspBilan{
+            display:none;
+        }
+        .TarifForfait{
+            display:none;
+        }
+        .CcspBilanResponsive{
+            display:block;
+            margin-bottom:50px;
+            width:100%;
+            height:auto;
+            padding:20px;
+        }
+        .T1{
+            font-size:30px;
+             text-align:center;
+        }
+        .T2{
+            font-size:35px;
+            text-align:center;  
+            color:#9b59b6;
+        }
+        .Espaceur{
+            margin-bottom:20px;
+        }
+        .ObjectifActivite{
+            display:none;
+        }
+        .ObjectifActiviteResponsive{
+            display:block;
+            width:100%;
+            margin-top:50px;
+            height:auto;
+            padding-bottom:50px;
+        }
+        .TarifResponsive{
+            display:block;
+            width:100%;
+            margin-top:50px;
+            height:auto;
+            padding-bottom:50px;
+        }
+        .contenuTarifResponsive{
+            height:auto;
+            margin-top:0px;
+            padding:25px;
+        }
+        .PrixResponsive{
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:50px;
+        
+    }
+        
+            
+    }
+   
+    
+    </style>
+    <div style=" width:100%; height:200px;"></div>
+    <div class="Contenu">
+        
+            <text  class="T1" >Les cours </text><text class="T2"> Individuels</text>
+        
+            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:35%;margin-right:auto;width:33%;  margin-top:-20px; margin-bottom:30px;height:30px;float:center;" ></div>
+            <div class="Espaceur"></div>
+        
+        
+
+        <div class="PresentationActivite">
+      
+            <div class="Conteneur_Pic_TXT" style="width:100%; height:550px;">
+                <div class="TxtDroiteB_E" style="float:right; width:47%; height:450px; margin-top:-40px;margin-right:35px;padding-right:30px;">
+                    <text style="font-size:30px;font-weight: ; background:#9b59b6; color:white; "> Comprendre pour mieux éduquer</text>
+                    </br>
+                    <text>Que ce soit pour de l’éducation aux bases, une séance de dressage sur un exercice précis, un trouble du comportement, le cours individuel est sans aucun doute la solution la plus adaptée.</text>
+                    </br>
+                    <text>Vous allez comprendre comment votre compagnon fonctionne, ce qui le fait vibrer, ce qui est indépendant de sa volonté … pour mieux adapter l’environnement et l’enseignement afin de l’amener à se comporter de la manière la plus accordée possible à votre mode de vie. </text>
+                    </br>
+                    <text>C’est avec passion que je vous fais découvrir le monde du chien, ses perceptions, ses modes d’apprentissage, de communication….</text>
+                    </br>
+                    <text>Les cours individuels sont primordiales afin de consolider l'écoute et l'apprentissage de votre chien pour vous permettre de mieux vivre les situations plus complexes que vous rencontrerez en milieu extérieur (rencontre d'un autre chien en ballade, rencontre de voiture ou de vélo,...)</text>
+                    </br>
+                </div>
+                
+                <div class="PicSupperpo3" style="margin-top:-40px;width:50%; height:550px; margin-left:0px; float:left;">
+                    <img class="Pic1" style="width:320px;  height:350px; margin-top:-100px; border-radius:10px;"src="{{asset('PhotoCourIndividuel/ChienCoursIndivi.jpg')}}"/>
+                    <img class="Pic3"style="width:330px;  height:250px; margin-left:-50px; margin-top:200px; border-radius:10px;"src="{{asset('PhotoCourIndividuel/CoursIndivi1.jpg')}}"/>
+                    <br>
+                    <img class="Pic2"style="width:380px;  height:350px; margin-left:-70px;margin-top:-30px; border-radius:10px;"src="{{asset('PhotoCourIndividuel/CoursIndivi2.jpg')}}"/>
+                </div>
+
+            </div>
+        </div>
+
+    
+
+        <div class="PresentationActiviteResponsive">
+      
+            <div class="Conteneur_Pic_TXT" style="width:100%; height:auto;">
+                    <text style="font-size:30px;font-weight: ; background:#9b59b6; color:white; ">Comprendre pour mieux éduquer</text>
+                    </br>
+                    <img  style="width:100%;  margin-left:auto; margin-right:auto; height:auto; margin-top:20px; border-radius:10px;"src="{{asset('PhotoCourIndividuel/ChienCoursIndivi.jpg')}}"/>
+                    <br>
+                    <text>Que ce soit pour de l’éducation aux bases, une séance de dressage sur un exercice précis, un trouble du comportement, le cours individuel est sans aucun doute la solution la plus adaptée. </text>
+                    </br>
+                    <text>C’est avec passion que je vous fais découvrir le monde du chien, ses perceptions, ses modes d’apprentissage, de communication…. </text>
+                    <img class="Pic3"style="width:100%;  margin-left:auto; margin-right:auto; height:auto;  margin-top:10px; border-radius:10px;"src="{{asset('PhotoCourIndividuel/CoursIndivi1.jpg')}}"/>
+                    </br>
+                    <text>Vous allez comprendre comment votre compagnon fonctionne, ce qui le fait vibrer, ce qui est indépendant de sa volonté … pour mieux adapter l’environnement et l’enseignement afin de l’amener à se comporter de la manière la plus accordée possible à votre mode de vie.</text>
+                    </br>
+                    <text>Les cours individuels sont primordiales afin de consolider l'écoute et l'apprentissage de votre chien pour vous permettre de mieux vivre les situations plus complexes que vous rencontrerez en milieu extérieur (rencontre d'un autre chien en ballade, rencontre de voiture ou de vélo,...) </text>
+                    </br>
+                    <img class="Pic2"style="width:100%;  margin-left:auto; margin-right:auto; height:auto;  margin-top:10px;border-radius:10px;"src="{{asset('PhotoCourIndividuel/CoursIndivi2.jpg')}}"/>
+               
+            </div>    
+        </div>
+
+
+        <div class="CcspBilan">
+        
+            <!--<div class="DivGauche">
+                <div class="TitreHaut">
+                </div>
+                <div class="TitreTarif">
+                    <text style="color:white; font-size:30px;">Réhabilitation de chien agréssif </text>
+                </div>
+                <div class="contenuTarif" >
+                    <div class="Prix">
+                        <text style=" text-align:;color:#9b59b6;font-size:25px;padding-top:150px;"></text>
+                        <text style=" text-align:center;color:#9b59b6;font-size:90px;">70</text><text style="color:#9b59b6;font-size:20px;">€/jour</text>
+                        <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:42.3%;margin-right:auto;width:17%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+            
+                    </div>
+                    
+                    <img style="width:25px; margin-left:25%; height:25px; float:left; "src="{{asset('ConseilAdoption/IconHorloge2.png')}}"/>
+                    <text style=" color:#9b59b6;float:left; padding-left:25px; font-size:25px;">7 jours maximum</text>
+                <br>
+                    <div style="margin-top:20px;"></div>
+
+                    <img style="width:25px;  margin-left:25%;height:25px; float:left;  "src="{{asset('ConseilAdoption/IconHome2.png')}}"/>
+                    <text style=" color:#9b59b6;float:left; padding-left:25px;font-size:25px;">à domicile</text>
+                    <br>
+                    
+                    <div style=" margin-top:5%;"></div>
+                    
+                    <a href="http://192.168.1.20:10002/index.php/contact"class="ButtonService">Réserver <img style="width:25px;  height:25px;  "src="{{asset('PhotoBilan/IconFleche.png')}}"/></a>    
+                </div>
+            </div> -->
+
+            <text style="font-size:40px;font-weight: normal; text-align:center; ">Comment </text><text style="font-size:45px;text-align:center; font-weight: normal; color:#9b59b6; "> ca se passe ?</text>
+            <div class="Séparateur" style="padding-top:30px;border-bottom:2px solid #f1c40f; margin-left:20%;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+            <div style="margin-bottom:2.5%;"></div>
+            <img style="width:35%;  height:auto; margin-top:60px;float:right; border-radius:10px; margin-left:50px; margin-right:0px; "src="{{asset('PhotoCourIndividuel/CoursIndivi3.jpg')}}"/>
+            
+           
+            <div style="float:left; margin-left: ;width:60%; margin-top:45px; height:auto;">
+
+                <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconHome2.png')}}"/>
+                <text style="font-size:20px; color:#9b59b6; ">Cours à domicile et intégration domestique :</text>
+                <text>parce que l'éducation d'un chien commence à la maison, je vous propose des cours à domicile quel que soit l'âge de votre chien.</text>
+                <br>
+                <text>En effet, ceci permet d'instaurer toutes les règles de base lors de son arrivée, les ordres élémentaires (assis, couché, "pas toucher"...), mais aussi de régler des problèmes tels que la destruction, les aboiements intempestifs, la propreté, les fugues, l'obéissance globale à l'intérieur ou tout autre soucis de comportement.</text>
+                <br>
+                <br>
+                <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconMonde.png')}}"/>
+                <text style="font-size:20px; color:#9b59b6; ">Cours en milieu urbain :</text>
+                <text>l'intérêt de travailler en extérieur va être de confronté votre chien à différents stimulis environnementaux.</text>
+                <br>
+                <text>C'est une mise en situation dans un contexte où le chien aura de nombreuses tentations, amenant donc à travailler de façon plus complexe son obéissance.</text>
+                <br>
+                <text>Ces cours se déroulent en centre ville.</text>
+            </div>
+                <img style="width:35%;  height:auto; margin-top:40px;float:right; border-radius:10px; margin-left:50px; margin-right:0px; "src="{{asset('PhotoCourIndividuel/CoursIndivi6.jpg')}}"/>
+
+           
+        </div>
+
+        <div class="CcspBilanResponsive">
+        
+            <text style="font-size:40px;font-weight: normal; text-align:center; ">Comment </text><text style="font-size:45px;text-align:center; font-weight: normal; color:#9b59b6; "> ca se passe ?</text>
+            <div class="Séparateur" style="padding-top:30px;border-bottom:2px solid #f1c40f; margin-left:18%;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+         
+
+
+            <img style="width:100%;  height:auto; margin-top:60px; margin-bottom:25px;float:right; border-radius:10px; margin-left:auto; margin-right:auto; "src="{{asset('PhotoCourIndividuel/CoursIndivi3.jpg')}}"/>
+           
+            <div style=" margin-left:auto;margin-right:auto;width:100%; margin-top:45px;">
+            <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconHome2.png')}}"/>
+            <text style="font-size:20px; color:#9b59b6; ">Cours à domicile et intégration domestique :</text>
+            <text>parce que l'éducation d'un chien commence à la maison, je vous propose des cours à domicile quel que soit l'âge de votre chien.</text>
+            <br>
+            <text>En effet, ceci permet d'instaurer toutes les règles de base lors de son arrivée, les ordres élémentaires (assis, couché, "pas toucher"...), mais aussi de régler des problèmes tels que la destruction, les aboiements intempestifs, la propreté, les fugues, l'obéissance globale à l'intérieur ou tout autre soucis de comportement.</text>
+            <br>
+            <br>
+            <img style="width:100%;  height:auto; margin-top:0px; margin-bottom:35px;float:right; border-radius:10px; margin-left:auto; margin-right:auto; "src="{{asset('PhotoCourIndividuel/CoursIndivi6.jpg')}}"/>
+           
+            <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconMonde.png')}}"/>
+            <text style="font-size:20px; color:#9b59b6; ">Cours en milieu urbain :</text>
+            <text>l'intérêt de travailler en extérieur va être de confronté votre chien à différents stimulis environnementaux.</text>
+            <br>
+            <text>C'est une mise en situation dans un contexte où le chien aura de nombreuses tentations, amenant donc à travailler de façon plus complexe son obéissance.</text>
+            <br>
+            <text>Ces cours se déroulent en centre ville.</text></div>
+               
+           
+        </div>
+
+         <div class="ObjectifActivite">
+
+             <text style="font-size:40px;font-weight: normal; text-align:center; ">Les </text><text style="font-size:45px;text-align:center; font-weight: normal; color:#9b59b6; "> objectifs</text>
+            <div class="Séparateur" style="padding-top:30px;border-bottom:2px solid #f1c40f; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+         
+            <div class="TroisObjectifs">
+                <div class="ActiviteGauche">
+                    <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconDogAssis.png')}}"/>
+                    </br>
+                    <text style="padding-left:10px;">Apprendre les ordres de base.</text>
+                </div>
+                
+                <div class="ActiviteMilieu">
+                    <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconDogPoop.png')}}"/>
+                    </br>
+                    <text style="padding-left:10px;">Corriger des mauvaises habitude.</text>
+                </div>
+
+                <div class="ActiviteDroite">
+                    <img style="width:75px;  height:75px;   "src="{{asset('PhotoCourIndividuel/IconDogLaisse.png')}}"/>
+                    </br>
+                    <text style="padding-left:10px; ">Crée un lien d'obéissence entre vous et vôtre chien.</text>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+        <div class="TarifForfait">
+
+             <text style="font-size:40px;font-weight: normal; text-align:center; ">Les tarifs </text><text style="font-size:45px;text-align:center; font-weight: normal; color:#9b59b6; "> des forfaits</text>
+            <div class="Séparateur" style="padding-top:30px;border-bottom:2px solid #f1c40f; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+         
+            <div class="TroisObjectifs">
+                <div class="ForfaitGauche">
+                    <text style="padding-left:10px; color:white; font-size:30px;">Séance individuelle</text>
+                    <div class="Séparateur" style="padding-top:0px;border-bottom:3px solid #f1c40f; margin-left:auto;margin-right:auto;width:60%; margin-top:-20px;  height:30px;float:center;" ></div>
+                    <br>
+
+                    <img style="width:50px; margin-left:7%; height:50px; float:left; "src="{{asset('PhotoCourIndividuel/IconHorlogeBlanc.png')}}"/>
+                    <text style=" color:white;float:left; padding-left:25px; font-size:25px; margin-top:10px;">1 séance de 1 heure</text>
+                    <br>
+
+                    <div class="Séparateur" style="margin-bottom:30px;border-bottom:2px solid white; margin-left:auto;margin-right:auto;width:40%;   height:30px;float:center;" ></div>
+                    <img style="width:50px; margin-left:7%; height:50px; float:left; "src="{{asset('PhotoCourIndividuel/IconVilleBlanc.png')}}"/>
+                    <text style=" color:white;float:left; padding-left:15px; font-size:21px; margin-top:15px;">En extérieur ou à domicile </text>
+                    <br>
+
+                    <div class="Séparateur" style="margin-bottom:30px;border-bottom:2px solid white; margin-left:auto;margin-right:auto;width:40%;   height:30px;float:center;" ></div>
+                    <text style=" font-weight:bold; color:white;float:left; margin-left:37%; font-size:55px; margin-top:10px;">40</text><text style="font-weight:bold; color:white;float:left; padding-left:25px; font-size:25px; margin-top:40px;">€</text>
+                        
+                    
+                </div>
+                
+                <div class="ForfaitMilieu">
+                    <text style="padding-left:10px; color:white; font-size:30px;">Forfait Puppy*</text>
+                    <div class="Séparateur" style="padding-top:0px;border-bottom:3px solid #f1c40f; margin-left:auto;margin-right:auto;width:60%; margin-top:-20px;  height:30px;float:center;" ></div>
+                    
+                    <br>
+                    <img style="width:50px; margin-left:7%; height:50px; float:left; "src="{{asset('PhotoCourIndividuel/IconHorlogeBlanc.png')}}"/>
+                    <text style=" color:white;float:left; padding-left:25px; font-size:25px; margin-top:10px;">5 séance de 1 heure</text>
+                    <br>
+
+                    <div class="Séparateur" style="margin-bottom:30px;border-bottom:2px solid white; margin-left:auto;margin-right:auto;width:40%;   height:30px;float:center;" ></div>
+                    <img style="width:50px; margin-left:7%; height:50px; float:left; "src="{{asset('PhotoCourIndividuel/IconVilleBlanc.png')}}"/>
+                    <text style=" color:white;float:left; padding-left:15px; font-size:21px; margin-top:15px;">En extérieur ou à domicile </text>
+                    <br>
+
+                    <div class="Séparateur" style="margin-bottom:30px;border-bottom:2px solid white; margin-left:auto;margin-right:auto;width:40%;   height:30px;float:center;" ></div>
+                    <text style=" font-weight:bold; color:white;float:left; margin-left:35%; font-size:55px; margin-top:10px;">180</text><text style="font-weight:bold; color:white;float:left; padding-left:25px; font-size:25px; margin-top:40px;">€</text>
+                    <br>
+                    <text style=" color:white;float:left; padding-left:24%; font-size:15px; margin-top:10px;">*une balade éducative offerte</text>  
+                    
+                </div>
+
+                <div class="ForfaitDroite">
+                    <text style="padding-left:10px; color:white; font-size:30px;">Forfait 5 séances</text>
+                    <div class="Séparateur" style="padding-top:0px;border-bottom:3px solid #f1c40f; margin-left:auto;margin-right:auto;width:60%; margin-top:-20px;  height:30px;float:center;" ></div>
+                    <br>
+
+                     <img style="width:50px; margin-left:7%; height:50px; float:left; "src="{{asset('PhotoCourIndividuel/IconHorlogeBlanc.png')}}"/>
+                    <text style=" color:white;float:left; padding-left:25px; font-size:25px; margin-top:10px;">5 séance de 1 heure</text>
+                    <br>
+
+                    <div class="Séparateur" style="margin-bottom:30px;border-bottom:2px solid white; margin-left:auto;margin-right:auto;width:40%;   height:30px;float:center;" ></div>
+                    <img style="width:50px; margin-left:7%; height:50px; float:left; "src="{{asset('PhotoCourIndividuel/IconVilleBlanc.png')}}"/>
+                    <text style=" color:white;float:left; padding-left:15px; font-size:21px; margin-top:15px;">En extérieur ou à domicile </text>
+                    <br>
+
+                    <div class="Séparateur" style="margin-bottom:30px;border-bottom:2px solid white; margin-left:auto;margin-right:auto;width:40%;   height:30px;float:center;" ></div>
+                    <text style=" font-weight:bold; color:white;float:left; margin-left:35%; font-size:55px; margin-top:10px;">200</text><text style="font-weight:bold; color:white;float:left; padding-left:25px; font-size:25px; margin-top:40px;">€</text>
+                        
+                    
+                </div>
+            </div>
+            <br>
+            <div style="width:100%; padding-left:5%; padding-right:5%; margin-top:0px;">
+                    <div style="float:;"><img style="width:100px;  height:100px;  margin-right:auto; margin-left:auto; "src="{{asset('CoursCollectif/iconAttention.png')}}"/></div>
+                    
+                    <text>Tarifs applicables dans un périmètre de 20 km autour de mon domicile (au delà 0,20€/km).</text>
+                    </div>
+        </div>
+
+         <div class="ObjectifActiviteResponsive">
+
+             <text style="font-size:40px;font-weight: normal; text-align:center; ">Les </text><text style="font-size:45px;text-align:center; font-weight: normal; color:#9b59b6; "> objectifs</text>
+            <div class="Séparateur" style="padding-top:30px;border-bottom:2px solid #f1c40f; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+                <div style="margin-top:50px;"></div>
+                <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconDogAssis.png')}}"/>
+                </br>
+                <text style="padding-left:10px;">Apprendre les ordres de base.</text>
+
+                <br>
+                <div class="Séparateur" style="padding-top:30px;border-bottom:1px solid #9b59b6; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+                <div style="margin-top:20px;"></div>
+
+                <img style="width:75px;  height:75px;  "src="{{asset('PhotoCourIndividuel/IconDogPoop.png')}}"/>
+                </br>
+                <text style="padding-left:10px;">Corriger des mauvaises habitude.</text>
+              
+                <br>
+                <div class="Séparateur" style="padding-top:30px;border-bottom:1px solid #9b59b6; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+                <div style="margin-top:20px;"></div>
+
+                <img style="width:75px;  height:75px;   "src="{{asset('PhotoCourIndividuel/IconDogLaisse.png')}}"/>
+                </br>
+                <text style="padding-left:10px; ">Crée un lien d'obéissence entre vous et vôtre chien.</text>
+                
+                
+                <div style="margin-top:15%;"></div>
+
+                <div class="TitreTarif">
+                        <text style="color:white; font-size:30px;">Forfait Cours individuels</text>
+                    </div>
+                    <div class="contenuTarifResponsive" >
+                        <text style="font-size:25px;color:#9b59b6;  font-weight:bold;">Séance individuelle</text>
+                        <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:20%;margin-right:auto;width:60%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+                
+                        <div class="Prix">
+                            <text style=" text-align:;color:#9b59b6;font-size:25px;padding-top:150px;"></text>
+                            <text style=" text-align:center;color:#9b59b6;font-size:90px;">40</text><text style="color:#9b59b6;font-size:20px;">€</text>
+                            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:42.3%;margin-right:auto;width:17%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+                
+                        </div>
+                        
+                        <img style="width:25px; margin-left:5%; height:25px; float:left; "src="{{asset('ConseilAdoption/IconHorloge2.png')}}"/>
+                        <text style=" color:#9b59b6;float:left; padding-left:25px; font-size:25px;">1 séance de 1 heure</text>
+                        <br>
+                        <div style="margin-top:5%;"></div>
+
+                        <img style="width:25px;  margin-left:5%;height:25px; float:left;  "src="{{asset('ConseilAdoption/IconHome2.png')}}"/>
+                        <text style=" color:#9b59b6;float:left; padding-left:25px;font-size:20px;">En extérieur ou à domicile</text>
+                        <br>
+                        
+                        <div style=" margin-top:5%;"></div>
+                        
+                        <a href="http://192.168.1.20:10002/index.php/contact"class="ButtonService">Réserver <img style="width:25px;  height:25px;  "src="{{asset('PhotoBilan/IconFleche.png')}}"/></a>    
+                    </div>
+                    <br>
+                    <div class="Séparateur" style="padding-top:10px;border-bottom:3px solid #9b59b6; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+                
+                    <div class="contenuTarifResponsive" >
+                        <text style="font-size:25px;color:#9b59b6; font-weight:bold;">Forfait Puppy*</text>
+                        <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:28%;margin-right:auto;width:40%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+                
+                        <div class="Prix">
+                            <text style=" text-align:;color:#9b59b6;font-size:25px;padding-top:150px;"></text>
+                            <text style=" text-align:center;color:#9b59b6;font-size:90px;">180</text><text style="color:#9b59b6;font-size:20px;">€</text>
+                            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:42.3%;margin-right:auto;width:17%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+                
+                        </div>
+                        
+                        <img style="width:25px; margin-left:10%; height:25px; float:left; "src="{{asset('ConseilAdoption/IconHorloge2.png')}}"/>
+                        <text style=" color:#9b59b6;float:left; padding-left:25px; font-size:25px;">5 séances de 1h</text>
+                        <br>
+                        <div style="margin-top:5%;"></div>
+
+                        <img style="width:25px;  margin-left:5%;height:25px; float:left;  "src="{{asset('ConseilAdoption/IconHome2.png')}}"/>
+                        <text style=" color:#9b59b6;float:left; padding-left:25px;font-size:20px;">En extérieur ou à domicile</text>
+                        <br>
+                       
+                        <text style=" color:#9b59b6;float:left; padding-left:15%; font-size:15px; margin-top:10px;">*une balade éducative offerte</text>  
+                    
+                        <div style=" margin-top:5%;"></div>
+                        
+                        <a href="http://192.168.1.20:10002/index.php/contact"class="ButtonService">Réserver <img style="width:25px;  height:25px;  "src="{{asset('PhotoBilan/IconFleche.png')}}"/></a>    
+                    </div>
+
+
+                        <br>
+                        <div class="Séparateur" style="padding-top:10px;border-bottom:3px solid #9b59b6; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+                
+
+                    <div class="contenuTarifResponsive" >
+                        <text style="font-size:25px;color:#9b59b6; font-weight:bold;">Forfait 5 séances</text>
+                        <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:28%;margin-right:auto;width:40%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+                
+                        <div class="Prix">
+                            <text style=" text-align:;color:#9b59b6;font-size:25px;padding-top:150px;"></text>
+                            <text style=" text-align:center;color:#9b59b6;font-size:90px;">200</text><text style="color:#9b59b6;font-size:20px;">€</text>
+                            <div class="Séparateur" style="border-bottom:3px solid #f1c40f; margin-left:42.3%;margin-right:auto;width:17%;  margin-top:-30px; margin-bottom:30px;height:30px;float:center;" ></div>
+                
+                        </div>
+                        
+                        <img style="width:25px; margin-left:6%; height:25px; float:left; "src="{{asset('ConseilAdoption/IconHorloge2.png')}}"/>
+                        <text style=" color:#9b59b6;float:left; padding-left:25px; font-size:25px;">5 séance de 1 heure</text>
+                        <br>
+                        <div style="margin-top:5%;"></div>
+
+                        <img style="width:25px;  margin-left:5%;height:25px; float:left;  "src="{{asset('ConseilAdoption/IconHome2.png')}}"/>
+                        <text style=" color:#9b59b6;float:left; padding-left:25px;font-size:20px;">En extérieur ou à domicile</text>
+                        <br>
+                        
+                        <div style=" margin-top:5%;"></div>
+                        
+                        <a href="http://192.168.1.20:10002/index.php/contact"class="ButtonService">Réserver <img style="width:25px;  height:25px;  "src="{{asset('PhotoBilan/IconFleche.png')}}"/></a>    
+                    </div>
+                        <br>
+                        <div class="Séparateur" style="border-bottom:3px solid #9b59b6; margin-left:auto;margin-right:auto;width:60%;   height:30px;float:center;" ></div>
+
+                    <div style="width:100%; padding-left:5%; padding-right:5%; margin-top:50px;">
+                    <div style="float:;"><img style="width:100px;  height:100px;  margin-right:auto; margin-left:auto; "src="{{asset('CoursCollectif/iconAttention.png')}}"/></div>
+                    
+                    <text>Tarifs applicables dans un périmètre de 20 km autour de mon domicile (au delà 0,20€/km).</text>
+                    </div>
+                </div>
+
+
+
+        
+
+    </div>
+    
+    
+    
+
+    
+
+{% endblock %}

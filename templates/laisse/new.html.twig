@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Laisse{% endblock %}
+
+{% block body %}
+
+<div style="padding-top:150px;"></div>
+    <h1>Create new Laisse</h1>
+
+    {{ include('laisse/_form.html.twig') }}
+
+    <a href="{{ path('laisse_index') }}">back to list</a>
+{% endblock %}

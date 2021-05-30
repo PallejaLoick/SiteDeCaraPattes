@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OptionLaisse{% endblock %}
+
+{% block body %}
+
+<div style="padding-top:150px;"></div>
+    <h1>OptionLaisse</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ option_laisse.id }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ option_laisse.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('option_laisse_index') }}">back to list</a>
+
+    <a href="{{ path('option_laisse_edit', {'id': option_laisse.id}) }}">edit</a>
+
+    {{ include('option_laisse/_delete_form.html.twig') }}
+{% endblock %}
